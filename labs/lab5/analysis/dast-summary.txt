@@ -1,0 +1,30 @@
+DAST Multi-Tool Results Summary
+Generated: Wed Apr  8 14:35:11 MSK 2026
+
+=== ZAP ===
+  Not yet generated (run authenticated ZAP scan first)
+
+=== Nuclei ===
+  Findings:       18
+  [UNKNOWN] DNS Rebinding Attack
+  [INFO] Public Swagger API - Detect
+  [INFO] Missing Subresource Integrity
+  [INFO] robots.txt endpoint prober
+  [INFO] HTTP Missing Security Headers
+
+=== Nikto ===
+  Findings: 14
+  + GET /: Server leaks inodes via ETags, header found with file /, fields: 0xW/124fa 0x19995cb3457 
+  + GET /: Uncommon header 'access-control-allow-origin' found, with contents: *
+  + GET /: Uncommon header 'feature-policy' found, with contents: payment 'self'
+  + GET /: Uncommon header 'x-recruiting' found, with contents: /#/jobs
+  + GET /: Uncommon header 'x-frame-options' found, with contents: SAMEORIGIN
+
+=== SQLmap ===
+  Injection points: 1
+  Parameter: q (GET)
+      Type: boolean-based blind
+      Title: AND boolean-based blind - WHERE or HAVING clause
+      Type: time-based blind
+      Title: SQLite > 2.0 AND time-based blind (heavy query)
+  back-end DBMS: SQLite
